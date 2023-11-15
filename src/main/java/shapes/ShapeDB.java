@@ -20,8 +20,21 @@ public class ShapeDB {
         shapes.add(square);
     }
     void drawShapes(Graphics g) {
+        // Draw all the shapes
         for (Shape s: shapes) {
             s.draw(g);
         }
+    }
+    // A 'generic' method - it can count any class of shape. The class is specified by the parameter T
+    // Alternatively you could keep a count variable of each type of shape and not count them each time
+    // Package-private method - only accessible from classes in the same package
+    int countClasses(Class<?> T) {
+        int count = 0;
+        for (Object object : shapes) {
+            if (T.isInstance(object)) {
+                count++;
+            }
+        }
+        return count;
     }
 }

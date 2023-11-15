@@ -1,12 +1,9 @@
 package shapes;
 
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-
 
 public class Drawing extends Canvas {
-    // Declare the shapes - they can all be private as nothing else needs to access them
+    // Create a shape database to store the shapes that have been added to the drawing by clicking the mouse
     private ShapeDB shapes=new ShapeDB();
 
     public Drawing() {
@@ -27,8 +24,18 @@ public class Drawing extends Canvas {
     // Inherited from Canvas - called by Windows when the canvas needs to be redrawn
     @Override
     public void paint(Graphics g) {
-        // Draw the shapes
+        // Called by windows when the drawing is to be drawn - ask the shapeDB to Draw the shapes
         shapes.drawShapes(g);
     }
+    public int getNumCircles(){
+        return shapes.countClasses(Circle.class);
+    }
+    public int getNumRects(){
+        return shapes.countClasses(Rect.class);
+    }
+    public int getNumSquares(){
+        return shapes.countClasses(Square.class);
+    }
+
 
 }

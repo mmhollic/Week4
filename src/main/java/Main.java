@@ -10,7 +10,7 @@ public class Main {
         DrawingUIController dui=new DrawingUIController();
 
         JFrame f=new JFrame();
-        f.setSize(800, 400);
+        f.setSize(1000, 400);
         f.setLayout(new GridLayout(1, 2));
         f.setVisible(true);
         f.add(dui.getMainPanel());
