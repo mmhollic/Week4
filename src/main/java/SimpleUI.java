@@ -17,7 +17,7 @@ public class SimpleUI {
         // shapes.Drawing will read the settings fields when it draws the shape
         DrawControlsSettings settings=new DrawControlsSettings();
         DrawControlsPanel dcp=new DrawControlsPanel(settings);
-        Drawing drawing=new Drawing(settings);
+        Drawing drawing=new Drawing();
 
         // Create a JFrame and add the drawing canvas to it
         JFrame f=new JFrame();
